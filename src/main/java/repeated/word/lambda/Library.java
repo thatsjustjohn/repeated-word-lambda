@@ -3,8 +3,19 @@
  */
 package repeated.word.lambda;
 
+import java.util.Hashtable;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
+
 public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+    public static String repeatedWord(String input){
+        if(input == null) return null;
+        Hashtable<String, Integer> hashtable = new Hashtable<String, Integer>();
+        String[] wordList = input.split(" ");
+        for(int i = 0; i < wordList.length; i++){
+            if(hashtable.contains(wordList[i].toLowerCase())) return wordList[i];
+            else hashtable.put(wordList[i].toLowerCase(), 1);
+        }
+        return null;
     }
 }
