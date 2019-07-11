@@ -7,8 +7,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
+    @Test public void test_string() {
         Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+        assertEquals("Should return a string of 'the' ", "a", classUnderTest.repeatedWord("A cat a hat"));
     }
 }

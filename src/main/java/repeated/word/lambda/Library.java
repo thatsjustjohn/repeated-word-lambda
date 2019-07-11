@@ -3,8 +3,17 @@
  */
 package repeated.word.lambda;
 
+import java.util.HashSet;
+
 public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+    public static String repeatedWord(String input){
+        if(input == null) return null;
+        HashSet<String> hashset = new HashSet<>();
+        String[] wordList = input.split(" ");
+        for(int i = 0; i < wordList.length; i++){
+            if(hashset.contains(wordList[i].toLowerCase())) return wordList[i];
+            else hashset.add(wordList[i].toLowerCase());
+        }
+        return null;
     }
 }
