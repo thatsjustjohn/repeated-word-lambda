@@ -9,6 +9,6 @@ import static org.junit.Assert.*;
 public class LibraryTest {
     @Test public void test_string() {
         Library classUnderTest = new Library();
-        assertEquals("Should return a string of 'the' ", "the", classUnderTest.repeatedWord("A cat a hat"));
+        assertEquals("Should return a string of 'the' ", "a", classUnderTest.repeatedWord("A cat a hat"));
     }
 }

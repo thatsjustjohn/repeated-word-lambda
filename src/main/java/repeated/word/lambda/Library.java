@@ -3,18 +3,16 @@
  */
 package repeated.word.lambda;
 
-import java.util.Hashtable;
-import com.amazonaws.services.lambda.runtime.Context;
-import com.amazonaws.services.lambda.runtime.LambdaLogger;
+import java.util.HashSet;
 
 public class Library {
     public static String repeatedWord(String input){
         if(input == null) return null;
-        Hashtable<String, Integer> hashtable = new Hashtable<String, Integer>();
+        HashSet<String> hashset = new HashSet<>();
         String[] wordList = input.split(" ");
         for(int i = 0; i < wordList.length; i++){
-            if(hashtable.contains(wordList[i].toLowerCase())) return wordList[i];
-            else hashtable.put(wordList[i].toLowerCase(), 1);
+            if(hashset.contains(wordList[i].toLowerCase())) return wordList[i];
+            else hashset.add(wordList[i].toLowerCase());
         }
         return null;
     }
